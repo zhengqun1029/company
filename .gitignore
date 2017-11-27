@@ -1,0 +1,9 @@
+ebus-task-spring.rar
+### IntelliJ IDEA ###
+/ebus-virtual-card/.idea/
+*.iws
+*.iml
+*.ipr
+
+catalina.base_IS_UNDEFINED/
+logs

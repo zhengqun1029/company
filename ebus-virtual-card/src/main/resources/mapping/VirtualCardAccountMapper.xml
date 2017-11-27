@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lantaiyuan.ebus.virtual.card.dao.VirtualCardAccountMapper">
+	<resultMap id="BaseResultMap"
+		type="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccount">
+		<!-- @mbggenerated -->
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+		<result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+		<result column="user_id" jdbcType="INTEGER" property="userId" />
+		<result column="user_name" jdbcType="CHAR" property="userName" />
+		<result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+		<result column="card_no" jdbcType="CHAR" property="cardNo" />
+		<result column="balance" jdbcType="DECIMAL" property="balance" />
+		<result column="status" jdbcType="BIT" property="status" />
+		<result column="field1" jdbcType="VARCHAR" property="field1" />
+		<result column="field2" jdbcType="VARCHAR" property="field2" />
+		<result column="field3" jdbcType="VARCHAR" property="field3" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		<!-- @mbggenerated -->
+		id, gmt_create, gmt_modified, user_id, user_name, city_code, card_no,
+		balance, status,
+		field1, field2, field3
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_account
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		<!-- @mbggenerated -->
+		delete from lty_virtual_card_account
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccount">
+		<!-- @mbggenerated -->
+		insert into lty_virtual_card_account (id, gmt_create, gmt_modified,
+		user_id, user_name, city_code,
+		card_no, balance, status,
+		field1, field2, field3
+		)
+		values (#{id,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP},
+		#{gmtModified,jdbcType=TIMESTAMP},
+		#{userId,jdbcType=INTEGER}, #{userName,jdbcType=CHAR}, #{cityCode,jdbcType=VARCHAR},
+		#{cardNo,jdbcType=CHAR}, #{balance,jdbcType=DECIMAL},
+		#{status,jdbcType=BIT},
+		#{field1,jdbcType=VARCHAR}, #{field2,jdbcType=VARCHAR}, #{field3,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccount">
+		<!-- @mbggenerated -->
+		insert into lty_virtual_card_account
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="gmtCreate != null">
+				gmt_create,
+			</if>
+			<if test="gmtModified != null">
+				gmt_modified,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="userName != null">
+				user_name,
+			</if>
+			<if test="cityCode != null">
+				city_code,
+			</if>
+			<if test="cardNo != null">
+				card_no,
+			</if>
+			<if test="balance != null">
+				balance,
+			</if>
+			<if test="status != null">
+				status,
+			</if>
+			<if test="field1 != null">
+				field1,
+			</if>
+			<if test="field2 != null">
+				field2,
+			</if>
+			<if test="field3 != null">
+				field3,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="gmtCreate != null">
+				#{gmtCreate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="gmtModified != null">
+				#{gmtModified,jdbcType=TIMESTAMP},
+			</if>
+			<if test="userId != null">
+				#{userId,jdbcType=INTEGER},
+			</if>
+			<if test="userName != null">
+				#{userName,jdbcType=CHAR},
+			</if>
+			<if test="cityCode != null">
+				#{cityCode,jdbcType=VARCHAR},
+			</if>
+			<if test="cardNo != null">
+				#{cardNo,jdbcType=CHAR},
+			</if>
+			<if test="balance != null">
+				#{balance,jdbcType=DECIMAL},
+			</if>
+			<if test="status != null">
+				#{status,jdbcType=BIT},
+			</if>
+			<if test="field1 != null">
+				#{field1,jdbcType=VARCHAR},
+			</if>
+			<if test="field2 != null">
+				#{field2,jdbcType=VARCHAR},
+			</if>
+			<if test="field3 != null">
+				#{field3,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccount">
+		<!-- @mbggenerated -->
+		update lty_virtual_card_account
+		<set>
+			<if test="gmtCreate != null">
+				gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="gmtModified != null">
+				gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+			</if>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=INTEGER},
+			</if>
+			<if test="userName != null">
+				user_name = #{userName,jdbcType=CHAR},
+			</if>
+			<if test="cityCode != null">
+				city_code = #{cityCode,jdbcType=VARCHAR},
+			</if>
+			<if test="cardNo != null">
+				card_no = #{cardNo,jdbcType=CHAR},
+			</if>
+			<if test="balance != null">
+				balance = #{balance,jdbcType=DECIMAL},
+			</if>
+			<if test="status != null">
+				status = #{status,jdbcType=BIT},
+			</if>
+			<if test="field1 != null">
+				field1 = #{field1,jdbcType=VARCHAR},
+			</if>
+			<if test="field2 != null">
+				field2 = #{field2,jdbcType=VARCHAR},
+			</if>
+			<if test="field3 != null">
+				field3 = #{field3,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccount">
+		<!-- @mbggenerated -->
+		update lty_virtual_card_account
+		set gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+		gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+		user_id = #{userId,jdbcType=INTEGER},
+		user_name = #{userName,jdbcType=CHAR},
+		city_code = #{cityCode,jdbcType=VARCHAR},
+		card_no = #{cardNo,jdbcType=CHAR},
+		balance = #{balance,jdbcType=DECIMAL},
+		status = #{status,jdbcType=BIT},
+		field1 = #{field1,jdbcType=VARCHAR},
+		field2 = #{field2,jdbcType=VARCHAR},
+		field3 = #{field3,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+
+<resultMap id="VirtualCardInfoQueryModelMap"
+		type="com.lantaiyuan.ebus.virtual.card.model.VirtualCardInfoQueryModel">
+		<!-- @mbggenerated -->
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+		<result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+		<result column="user_id" jdbcType="INTEGER" property="userId" />
+		<result column="user_name" jdbcType="CHAR" property="userName" />
+		<result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+		<result column="card_no" jdbcType="CHAR" property="cardNo" />
+		<result column="balance" jdbcType="DECIMAL" property="balance" />
+		<result column="status" jdbcType="BIT" property="status" />
+		<result column="field1" jdbcType="VARCHAR" property="field1" />
+		<result column="field2" jdbcType="VARCHAR" property="field2" />
+		<result column="field3" jdbcType="VARCHAR" property="field3" />
+		 <result column="pics" jdbcType="VARCHAR" property="pics" />
+        <result column="card_introduction" jdbcType="VARCHAR" property="cardIntroduction" />
+	</resultMap>
+	<!--自定义：queryByUserAndCity  -->
+	<select id="queryByUserAndCity" parameterType="java.lang.String"
+		resultMap="VirtualCardInfoQueryModelMap">
+		SELECT A.*,B.card_introduction,B.pics FROM lty_virtual_card_account A
+		LEFT JOIN lty_virtual_card_setting B ON A.city_code = B.city_code
+		WHERE A.city_code = #{cityCode,jdbcType=VARCHAR} AND A.user_id = #{userId,jdbcType=INTEGER}
+	</select>
+	
+	 <!--自定义：queryMaxCardNoByCity  -->
+	<select id="queryMaxCardNoByCity" parameterType="java.lang.String"
+	resultType="java.lang.String">
+  		SELECT card_no from lty_virtual_card_account WHERE 
+  		city_code = #{cityCode,jdbcType=VARCHAR} ORDER BY  card_no DESC LIMIT 1
+	</select>
+	
+	<!--自定义：queryByCardNo  -->
+	<select id="queryByCardNo" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+			<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_account
+		where 	card_no = #{cardNo,jdbcType=CHAR}
+	</select>
+	
+	<!-- updateBalanceByCardNo -->
+	<update id="updateBalanceByCardNo"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccount">
+		<!-- @mbggenerated -->
+		update lty_virtual_card_account
+		set  
+		balance = #{balance,jdbcType=DECIMAL}
+		where 	card_no = #{cardNo,jdbcType=CHAR}
+	</update>
+	
+	<!-- updateSignByCardNo -->
+	<update id="updateSignByCardNo"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountSign">
+		<!-- @mbggenerated -->
+		update lty_virtual_card_account_sign
+		set  
+		 sign = #{sign,jdbcType=VARCHAR}
+		where 	card_no = #{cardNo,jdbcType=CHAR}
+	</update>
+	
+</mapper>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lantaiyuan.ebus.virtual.card.dao.VirtualCardSettingMapper">
+    <resultMap id="BaseResultMap" type="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSetting">
+        <!--
+        @mbggenerated
+        -->
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+        <result column="card_introduction" jdbcType="VARCHAR" property="cardIntroduction" />
+        <result column="pics" jdbcType="VARCHAR" property="pics" />
+        <result column="open_status" jdbcType="BIT" property="openStatus" />
+        <result column="field1" jdbcType="VARCHAR" property="field1" />
+        <result column="field2" jdbcType="VARCHAR" property="field2" />
+        <result column="field3" jdbcType="VARCHAR" property="field3" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        id, gmt_create, gmt_modified, city_code, card_introduction, pics, open_status, field1, 
+        field2, field3
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from lty_virtual_card_setting
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--
+        @mbggenerated
+        -->
+        delete from lty_virtual_card_setting
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSetting">
+        <!--
+        @mbggenerated
+        -->
+        insert into lty_virtual_card_setting (id, gmt_create, gmt_modified, 
+            city_code, card_introduction, pics, 
+            open_status, field1, field2, 
+            field3)
+        values (#{id,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+            #{cityCode,jdbcType=VARCHAR}, #{cardIntroduction,jdbcType=VARCHAR}, #{pics,jdbcType=VARCHAR}, 
+            #{openStatus,jdbcType=BIT}, #{field1,jdbcType=VARCHAR}, #{field2,jdbcType=VARCHAR}, 
+            #{field3,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSetting">
+        <!--
+        @mbggenerated
+        -->
+        insert into lty_virtual_card_setting
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+            <if test="cityCode != null">
+                city_code,
+            </if>
+            <if test="cardIntroduction != null">
+                card_introduction,
+            </if>
+            <if test="pics != null">
+                pics,
+            </if>
+            <if test="openStatus != null">
+                open_status,
+            </if>
+            <if test="field1 != null">
+                field1,
+            </if>
+            <if test="field2 != null">
+                field2,
+            </if>
+            <if test="field3 != null">
+                field3,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+            <if test="cityCode != null">
+                #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cardIntroduction != null">
+                #{cardIntroduction,jdbcType=VARCHAR},
+            </if>
+            <if test="pics != null">
+                #{pics,jdbcType=VARCHAR},
+            </if>
+            <if test="openStatus != null">
+                #{openStatus,jdbcType=BIT},
+            </if>
+            <if test="field1 != null">
+                #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                #{field3,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSetting">
+        <!--
+        @mbggenerated
+        -->
+        update lty_virtual_card_setting
+        <set>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+            <if test="cityCode != null">
+                city_code = #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cardIntroduction != null">
+                card_introduction = #{cardIntroduction,jdbcType=VARCHAR},
+            </if>
+            <if test="pics != null">
+                pics = #{pics,jdbcType=VARCHAR},
+            </if>
+            <if test="openStatus != null">
+                open_status = #{openStatus,jdbcType=BIT},
+            </if>
+            <if test="field1 != null">
+                field1 = #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                field2 = #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                field3 = #{field3,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSetting">
+        <!--
+        @mbggenerated
+        -->
+        update lty_virtual_card_setting
+        set gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            city_code = #{cityCode,jdbcType=VARCHAR},
+            card_introduction = #{cardIntroduction,jdbcType=VARCHAR},
+            pics = #{pics,jdbcType=VARCHAR},
+            open_status = #{openStatus,jdbcType=BIT},
+            field1 = #{field1,jdbcType=VARCHAR},
+            field2 = #{field2,jdbcType=VARCHAR},
+            field3 = #{field3,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <!-- 以下为自定义 -->
+    <!-- 查看当前城市编码的公交卡是否存在，返回数量 -->
+    <select id="countCardNumByCityCode" resultType="java.lang.Integer">
+        select count(id) from lty_virtual_card_setting where city_code = #{cityCode,jdbcType=VARCHAR}
+    </select>
+    
+    <select id="sumCityBalance" resultType="java.math.BigDecimal">
+        select sum(balance) from lty_virtual_card_account where city_code =
+        (select city_code from lty_virtual_card_setting where id = #{id,jdbcType=BIGINT})
+    </select>
+
+    <!-- 自定义方法 分页查询-->
+    <sql id="Page_Base_Column_List">
+        a.id, a.gmt_create, a.gmt_modified, a.city_code, a.card_introduction, a.pics, a.open_status, a.field1,
+        a.field2, b.cityName as field3
+    </sql>
+
+    <select id="findCityCardByPage"
+            resultMap="BaseResultMap"
+            parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSettingQueryModel">
+        select <include refid="Page_Base_Column_List" /> from lty_virtual_card_setting a
+        left join base_service_ip b on(a.city_code = b.cityCode)
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+            <if test="startDate != null and startDate != ''">
+                and a.gmt_create >= #{startDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="endDate != null and endDate != ''">
+                and a.gmt_create &lt;= #{endDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="cityCode != null and cityCode != -1">
+                and a.city_code = #{cityCode,jdbcType=VARCHAR}
+            </if>
+        </trim>
+        order by a.gmt_create desc
+    </select>
+
+	  <!--  queryByCity-->
+     <select id="queryByCity" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from lty_virtual_card_setting
+        where city_code = #{cityCode,jdbcType=VARCHAR}
+         and
+          open_status =1
+    </select>
+</mapper>

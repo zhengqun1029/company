@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lantaiyuan.ebus.virtual.card.dao.VirtualCardExpenseHistoryMapper">
+    <resultMap id="BaseResultMap" type="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistory">
+        <!--
+        @mbggenerated
+        -->
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="take_id" jdbcType="VARCHAR" property="takeId" />
+        <result column="user_id" jdbcType="INTEGER" property="userId" />
+        <result column="user_name" jdbcType="CHAR" property="userName" />
+        <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+        <result column="card_no" jdbcType="CHAR" property="cardNo" />
+        <result column="amount" jdbcType="DECIMAL" property="amount" />
+        <result column="route_id" jdbcType="VARCHAR" property="routeId" />
+        <result column="route_name" jdbcType="VARCHAR" property="routeName" />
+        <result column="vehicle_id" jdbcType="VARCHAR" property="vehicleId" />
+        <result column="route_direction" jdbcType="BIT" property="routeDirection" />
+        <result column="diver_id" jdbcType="INTEGER" property="diverId" />
+        <result column="charge_type" jdbcType="BIT" property="chargeType" />
+        <result column="bus_seq" jdbcType="VARCHAR" property="busSeq" />
+        <result column="up_swipe_id" jdbcType="VARCHAR" property="upSwipeId" />
+        <result column="up_swipe_time" jdbcType="TIMESTAMP" property="upSwipeTime" />
+        <result column="up_swipe_utc_time" jdbcType="INTEGER" property="upSwipeUtcTime" />
+        <result column="up_station_id" jdbcType="INTEGER" property="upStationId" />
+        <result column="up_station_no" jdbcType="INTEGER" property="upStationNo" />
+        <result column="up_station_name" jdbcType="CHAR" property="upStationName" />
+        <result column="down_swipe_id" jdbcType="VARCHAR" property="downSwipeId" />
+        <result column="down_swipe_time" jdbcType="TIMESTAMP" property="downSwipeTime" />
+        <result column="down_swipe_utc_time" jdbcType="INTEGER" property="downSwipeUtcTime" />
+        <result column="down_station_id" jdbcType="INTEGER" property="downStationId" />
+        <result column="down_station_no" jdbcType="INTEGER" property="downStationNo" />
+        <result column="down_station_name" jdbcType="CHAR" property="downStationName" />
+        <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
+        <result column="trans_status" jdbcType="BIT" property="transStatus" />
+        <result column="deal_status" jdbcType="BIT" property="dealStatus" />
+        <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+        <result column="field1" jdbcType="VARCHAR" property="field1" />
+        <result column="field2" jdbcType="VARCHAR" property="field2" />
+        <result column="field3" jdbcType="VARCHAR" property="field3" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        id, gmt_create, gmt_modified, take_id, user_id, user_name, city_code, card_no, amount, 
+        route_id, route_name, vehicle_id, route_direction, diver_id, charge_type, bus_seq, 
+        up_swipe_id, up_swipe_time, up_swipe_utc_time, up_station_id, up_station_no, up_station_name, 
+        down_swipe_id, down_swipe_time, down_swipe_utc_time, down_station_id, down_station_no, 
+        down_station_name, transaction_id, trans_status, deal_status, finish_time, field1, 
+        field2, field3
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from lty_virtual_card_expense_history
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        <!--
+        @mbggenerated
+        -->
+        delete from lty_virtual_card_expense_history
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistory">
+        <!--
+        @mbggenerated
+        -->
+        insert into lty_virtual_card_expense_history (id, gmt_create, gmt_modified, 
+            take_id, user_id, user_name, 
+            city_code, card_no, amount, 
+            route_id, route_name, vehicle_id, 
+            route_direction, diver_id, charge_type, 
+            bus_seq, up_swipe_id, up_swipe_time, 
+            up_swipe_utc_time, up_station_id, up_station_no, 
+            up_station_name, down_swipe_id, down_swipe_time, 
+            down_swipe_utc_time, down_station_id, down_station_no, 
+            down_station_name, transaction_id, trans_status, 
+            deal_status, finish_time, field1, 
+            field2, field3)
+        values (#{id,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, 
+            #{takeId,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=CHAR}, 
+            #{cityCode,jdbcType=VARCHAR}, #{cardNo,jdbcType=CHAR}, #{amount,jdbcType=DECIMAL}, 
+            #{routeId,jdbcType=VARCHAR}, #{routeName,jdbcType=VARCHAR}, #{vehicleId,jdbcType=VARCHAR}, 
+            #{routeDirection,jdbcType=BIT}, #{diverId,jdbcType=INTEGER}, #{chargeType,jdbcType=BIT}, 
+            #{busSeq,jdbcType=VARCHAR}, #{upSwipeId,jdbcType=VARCHAR}, #{upSwipeTime,jdbcType=TIMESTAMP}, 
+            #{upSwipeUtcTime,jdbcType=INTEGER}, #{upStationId,jdbcType=INTEGER}, #{upStationNo,jdbcType=INTEGER}, 
+            #{upStationName,jdbcType=CHAR}, #{downSwipeId,jdbcType=VARCHAR}, #{downSwipeTime,jdbcType=TIMESTAMP}, 
+            #{downSwipeUtcTime,jdbcType=INTEGER}, #{downStationId,jdbcType=INTEGER}, #{downStationNo,jdbcType=INTEGER}, 
+            #{downStationName,jdbcType=CHAR}, #{transactionId,jdbcType=VARCHAR}, #{transStatus,jdbcType=BIT}, 
+            #{dealStatus,jdbcType=BIT}, #{finishTime,jdbcType=TIMESTAMP}, #{field1,jdbcType=VARCHAR}, 
+            #{field2,jdbcType=VARCHAR}, #{field3,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistory">
+        <!--
+        @mbggenerated
+        -->
+        insert into lty_virtual_card_expense_history
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified,
+            </if>
+            <if test="takeId != null">
+                take_id,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="cityCode != null">
+                city_code,
+            </if>
+            <if test="cardNo != null">
+                card_no,
+            </if>
+            <if test="amount != null">
+                amount,
+            </if>
+            <if test="routeId != null">
+                route_id,
+            </if>
+            <if test="routeName != null">
+                route_name,
+            </if>
+            <if test="vehicleId != null">
+                vehicle_id,
+            </if>
+            <if test="routeDirection != null">
+                route_direction,
+            </if>
+            <if test="diverId != null">
+                diver_id,
+            </if>
+            <if test="chargeType != null">
+                charge_type,
+            </if>
+            <if test="busSeq != null">
+                bus_seq,
+            </if>
+            <if test="upSwipeId != null">
+                up_swipe_id,
+            </if>
+            <if test="upSwipeTime != null">
+                up_swipe_time,
+            </if>
+            <if test="upSwipeUtcTime != null">
+                up_swipe_utc_time,
+            </if>
+            <if test="upStationId != null">
+                up_station_id,
+            </if>
+            <if test="upStationNo != null">
+                up_station_no,
+            </if>
+            <if test="upStationName != null">
+                up_station_name,
+            </if>
+            <if test="downSwipeId != null">
+                down_swipe_id,
+            </if>
+            <if test="downSwipeTime != null">
+                down_swipe_time,
+            </if>
+            <if test="downSwipeUtcTime != null">
+                down_swipe_utc_time,
+            </if>
+            <if test="downStationId != null">
+                down_station_id,
+            </if>
+            <if test="downStationNo != null">
+                down_station_no,
+            </if>
+            <if test="downStationName != null">
+                down_station_name,
+            </if>
+            <if test="transactionId != null">
+                transaction_id,
+            </if>
+            <if test="transStatus != null">
+                trans_status,
+            </if>
+            <if test="dealStatus != null">
+                deal_status,
+            </if>
+            <if test="finishTime != null">
+                finish_time,
+            </if>
+            <if test="field1 != null">
+                field1,
+            </if>
+            <if test="field2 != null">
+                field2,
+            </if>
+            <if test="field3 != null">
+                field3,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+            <if test="takeId != null">
+                #{takeId,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=CHAR},
+            </if>
+            <if test="cityCode != null">
+                #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cardNo != null">
+                #{cardNo,jdbcType=CHAR},
+            </if>
+            <if test="amount != null">
+                #{amount,jdbcType=DECIMAL},
+            </if>
+            <if test="routeId != null">
+                #{routeId,jdbcType=VARCHAR},
+            </if>
+            <if test="routeName != null">
+                #{routeName,jdbcType=VARCHAR},
+            </if>
+            <if test="vehicleId != null">
+                #{vehicleId,jdbcType=VARCHAR},
+            </if>
+            <if test="routeDirection != null">
+                #{routeDirection,jdbcType=BIT},
+            </if>
+            <if test="diverId != null">
+                #{diverId,jdbcType=INTEGER},
+            </if>
+            <if test="chargeType != null">
+                #{chargeType,jdbcType=BIT},
+            </if>
+            <if test="busSeq != null">
+                #{busSeq,jdbcType=VARCHAR},
+            </if>
+            <if test="upSwipeId != null">
+                #{upSwipeId,jdbcType=VARCHAR},
+            </if>
+            <if test="upSwipeTime != null">
+                #{upSwipeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="upSwipeUtcTime != null">
+                #{upSwipeUtcTime,jdbcType=INTEGER},
+            </if>
+            <if test="upStationId != null">
+                #{upStationId,jdbcType=INTEGER},
+            </if>
+            <if test="upStationNo != null">
+                #{upStationNo,jdbcType=INTEGER},
+            </if>
+            <if test="upStationName != null">
+                #{upStationName,jdbcType=CHAR},
+            </if>
+            <if test="downSwipeId != null">
+                #{downSwipeId,jdbcType=VARCHAR},
+            </if>
+            <if test="downSwipeTime != null">
+                #{downSwipeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="downSwipeUtcTime != null">
+                #{downSwipeUtcTime,jdbcType=INTEGER},
+            </if>
+            <if test="downStationId != null">
+                #{downStationId,jdbcType=INTEGER},
+            </if>
+            <if test="downStationNo != null">
+                #{downStationNo,jdbcType=INTEGER},
+            </if>
+            <if test="downStationName != null">
+                #{downStationName,jdbcType=CHAR},
+            </if>
+            <if test="transactionId != null">
+                #{transactionId,jdbcType=VARCHAR},
+            </if>
+            <if test="transStatus != null">
+                #{transStatus,jdbcType=BIT},
+            </if>
+            <if test="dealStatus != null">
+                #{dealStatus,jdbcType=BIT},
+            </if>
+            <if test="finishTime != null">
+                #{finishTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="field1 != null">
+                #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                #{field3,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistory">
+        <!--
+        @mbggenerated
+        -->
+        update lty_virtual_card_expense_history
+        <set>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModified != null">
+                gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            </if>
+            <if test="takeId != null">
+                take_id = #{takeId,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=CHAR},
+            </if>
+            <if test="cityCode != null">
+                city_code = #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="cardNo != null">
+                card_no = #{cardNo,jdbcType=CHAR},
+            </if>
+            <if test="amount != null">
+                amount = #{amount,jdbcType=DECIMAL},
+            </if>
+            <if test="routeId != null">
+                route_id = #{routeId,jdbcType=VARCHAR},
+            </if>
+            <if test="routeName != null">
+                route_name = #{routeName,jdbcType=VARCHAR},
+            </if>
+            <if test="vehicleId != null">
+                vehicle_id = #{vehicleId,jdbcType=VARCHAR},
+            </if>
+            <if test="routeDirection != null">
+                route_direction = #{routeDirection,jdbcType=BIT},
+            </if>
+            <if test="diverId != null">
+                diver_id = #{diverId,jdbcType=INTEGER},
+            </if>
+            <if test="chargeType != null">
+                charge_type = #{chargeType,jdbcType=BIT},
+            </if>
+            <if test="busSeq != null">
+                bus_seq = #{busSeq,jdbcType=VARCHAR},
+            </if>
+            <if test="upSwipeId != null">
+                up_swipe_id = #{upSwipeId,jdbcType=VARCHAR},
+            </if>
+            <if test="upSwipeTime != null">
+                up_swipe_time = #{upSwipeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="upSwipeUtcTime != null">
+                up_swipe_utc_time = #{upSwipeUtcTime,jdbcType=INTEGER},
+            </if>
+            <if test="upStationId != null">
+                up_station_id = #{upStationId,jdbcType=INTEGER},
+            </if>
+            <if test="upStationNo != null">
+                up_station_no = #{upStationNo,jdbcType=INTEGER},
+            </if>
+            <if test="upStationName != null">
+                up_station_name = #{upStationName,jdbcType=CHAR},
+            </if>
+            <if test="downSwipeId != null">
+                down_swipe_id = #{downSwipeId,jdbcType=VARCHAR},
+            </if>
+            <if test="downSwipeTime != null">
+                down_swipe_time = #{downSwipeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="downSwipeUtcTime != null">
+                down_swipe_utc_time = #{downSwipeUtcTime,jdbcType=INTEGER},
+            </if>
+            <if test="downStationId != null">
+                down_station_id = #{downStationId,jdbcType=INTEGER},
+            </if>
+            <if test="downStationNo != null">
+                down_station_no = #{downStationNo,jdbcType=INTEGER},
+            </if>
+            <if test="downStationName != null">
+                down_station_name = #{downStationName,jdbcType=CHAR},
+            </if>
+            <if test="transactionId != null">
+                transaction_id = #{transactionId,jdbcType=VARCHAR},
+            </if>
+            <if test="transStatus != null">
+                trans_status = #{transStatus,jdbcType=BIT},
+            </if>
+            <if test="dealStatus != null">
+                deal_status = #{dealStatus,jdbcType=BIT},
+            </if>
+            <if test="finishTime != null">
+                finish_time = #{finishTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="field1 != null">
+                field1 = #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                field2 = #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                field3 = #{field3,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistory">
+        <!--
+        @mbggenerated
+        -->
+        update lty_virtual_card_expense_history
+        set gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            take_id = #{takeId,jdbcType=VARCHAR},
+            user_id = #{userId,jdbcType=INTEGER},
+            user_name = #{userName,jdbcType=CHAR},
+            city_code = #{cityCode,jdbcType=VARCHAR},
+            card_no = #{cardNo,jdbcType=CHAR},
+            amount = #{amount,jdbcType=DECIMAL},
+            route_id = #{routeId,jdbcType=VARCHAR},
+            route_name = #{routeName,jdbcType=VARCHAR},
+            vehicle_id = #{vehicleId,jdbcType=VARCHAR},
+            route_direction = #{routeDirection,jdbcType=BIT},
+            diver_id = #{diverId,jdbcType=INTEGER},
+            charge_type = #{chargeType,jdbcType=BIT},
+            bus_seq = #{busSeq,jdbcType=VARCHAR},
+            up_swipe_id = #{upSwipeId,jdbcType=VARCHAR},
+            up_swipe_time = #{upSwipeTime,jdbcType=TIMESTAMP},
+            up_swipe_utc_time = #{upSwipeUtcTime,jdbcType=INTEGER},
+            up_station_id = #{upStationId,jdbcType=INTEGER},
+            up_station_no = #{upStationNo,jdbcType=INTEGER},
+            up_station_name = #{upStationName,jdbcType=CHAR},
+            down_swipe_id = #{downSwipeId,jdbcType=VARCHAR},
+            down_swipe_time = #{downSwipeTime,jdbcType=TIMESTAMP},
+            down_swipe_utc_time = #{downSwipeUtcTime,jdbcType=INTEGER},
+            down_station_id = #{downStationId,jdbcType=INTEGER},
+            down_station_no = #{downStationNo,jdbcType=INTEGER},
+            down_station_name = #{downStationName,jdbcType=CHAR},
+            transaction_id = #{transactionId,jdbcType=VARCHAR},
+            trans_status = #{transStatus,jdbcType=BIT},
+            deal_status = #{dealStatus,jdbcType=BIT},
+            finish_time = #{finishTime,jdbcType=TIMESTAMP},
+            field1 = #{field1,jdbcType=VARCHAR},
+            field2 = #{field2,jdbcType=VARCHAR},
+            field3 = #{field3,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <!-- 自定义方法 分页查询-->
+    <!-- 分页查询需要展示的字段 -->
+    <sql id="Page_Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        a.id, a.gmt_create, a.gmt_modified, a.take_id, a.user_id, c.userName as user_name, a.city_code, a.card_no, a.amount,
+        a.route_id, a.route_name, a.vehicle_id, a.route_direction, a.diver_id, a.charge_type, a.bus_seq,
+        a.up_swipe_id, a.up_swipe_time, a.up_swipe_utc_time, a.up_station_id, a.up_station_no, a.up_station_name,
+        a.down_swipe_id, a.down_swipe_time, a.down_swipe_utc_time, a.down_station_id, a.down_station_no,
+        a.down_station_name, a.transaction_id, a.trans_status, a.deal_status, a.finish_time, a.field1,
+        a.field2, b.cityName as field3
+    </sql>
+    <!-- 分页查询sql -->
+    <select id="findStatisticsByPage"
+            resultMap="BaseResultMap"
+            parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistoryQueryModel">
+        select <include refid="Page_Base_Column_List" /> from lty_virtual_card_expense_history a
+        left join base_service_ip b on(a.city_code = b.cityCode)
+        left join base_user c on(a.user_id = c.userId)
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+            <if test="startDate != null and startDate != ''">
+                and a.finish_time >= #{startDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="endDate != null and endDate != ''">
+                and a.finish_time &lt;= #{endDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="cityCode != null and cityCode != -1">
+                and a.city_code = #{cityCode,jdbcType=VARCHAR}
+            </if>
+            <if test="vehicleId != null and vehicleId != ''">
+                and a.vehicle_id = #{vehicleId,jdbcType=VARCHAR}
+            </if>
+            <if test="routeName != null and routeName != ''">
+                and a.route_name = #{routeName,jdbcType=VARCHAR}
+            </if>
+            <if test="upStation != null and upStation != ''">
+                and a.up_station_name = #{upStation,jdbcType=VARCHAR}
+            </if>
+        </trim>
+        order by a.finish_time desc
+    </select>
+
+    <!--统计合计金额-->
+    <select id="totalSpendMoney" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardExpenseHistoryQueryModel"
+            resultType="java.math.BigDecimal">
+        select sum(amount) from lty_virtual_card_expense_history
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+	        <if test="startDate != null and startDate != ''">
+	            and finish_time >= #{startDate,jdbcType=TIMESTAMP}
+	        </if>
+	        <if test="endDate != null and endDate != ''">
+	            and finish_time &lt;= #{endDate,jdbcType=TIMESTAMP}
+	        </if>
+	        <if test="cityCode != null and cityCode != -1">
+	            and city_code = #{cityCode,jdbcType=VARCHAR}
+	        </if>
+	        <if test="vehicleId != null and vehicleId != ''">
+	            and vehicle_id = #{vehicleId,jdbcType=VARCHAR}
+	        </if>
+	        <if test="routeName != null and routeName != ''">
+	            and route_name = #{routeName,jdbcType=VARCHAR}
+	        </if>
+	        <if test="upStation != null and upStation != ''">
+	            and up_station_name = #{upStation,jdbcType=VARCHAR}
+	        </if>
+        </trim>
+    </select>
+
+	<!--queryByTakeid  -->
+	 <select id="queryByTakeid" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from lty_virtual_card_expense_history
+        where  take_id = #{takeId,jdbcType=VARCHAR}
+    </select>
+    
+    <!--queryByTakeid  -->
+	 <select id="queryOnlyOneByCardNoAndCityAndTime" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--        
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from lty_virtual_card_expense_history
+        where   city_code = #{cityCode,jdbcType=VARCHAR} and
+            card_no = #{cardNo,jdbcType=CHAR}  and
+            route_id = #{routeId,jdbcType=VARCHAR} and
+            vehicle_id = #{vehicleId,jdbcType=VARCHAR} and
+            route_direction = #{routeDirection,jdbcType=BIT} 
+            and
+            trans_status = 0 AND down_swipe_id IS NULL
+            ORDER BY gmt_create ASC LIMIT 1
+    </select>
+
+    <!--查找出异常信息，未付款记录 yangyang-->
+    <select id="getUnpaidRecords" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" /> from lty_virtual_card_expense_history where (charge_type = 1
+        and transaction_id is null and trans_status = 0) or
+        (charge_type = 2 and down_swipe_id is not null and transaction_id is null and trans_status = 0)
+    </select>
+    
+    
+     <!--查找超时未处理的分段信息  Yvan-->
+    <select id="getOverTimeRecord" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" /> from lty_virtual_card_expense_history 
+        where 
+        charge_type = 2 and down_swipe_id is  null and transaction_id is null and trans_status = 0
+    </select>
+    
+</mapper>

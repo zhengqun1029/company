@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lantaiyuan.ebus.virtual.card.dao.VirtualCardAccountHistoryMapper">
+        <resultMap id="BaseResultMap" type="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistory">
+            <!--
+            @mbggenerated
+            -->
+            <id column="id" jdbcType="BIGINT" property="id" />
+            <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+            <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+            <result column="transaction_id" jdbcType="VARCHAR" property="transactionId" />
+            <result column="user_id" jdbcType="INTEGER" property="userId" />
+            <result column="user_name" jdbcType="CHAR" property="userName" />
+            <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+            <result column="card_no" jdbcType="CHAR" property="cardNo" />
+            <result column="amount" jdbcType="DECIMAL" property="amount" />
+            <result column="balance" jdbcType="DECIMAL" property="balance" />
+            <result column="opt_type" jdbcType="TINYINT" property="optType" />
+            <result column="pay_type" jdbcType="TINYINT" property="payType" />
+            <result column="pay_status" jdbcType="BIT" property="payStatus" />
+            <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+            <result column="field1" jdbcType="VARCHAR" property="field1" />
+            <result column="field2" jdbcType="VARCHAR" property="field2" />
+            <result column="field3" jdbcType="VARCHAR" property="field3" />
+        </resultMap>
+        <sql id="Base_Column_List">
+            <!--
+            @mbggenerated
+            -->
+            id, gmt_create, gmt_modified, transaction_id, user_id, user_name, city_code, card_no,
+            amount, balance, opt_type, pay_type, pay_status, pay_time, field1, field2, field3
+        </sql>
+        <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+            <!--
+            @mbggenerated
+            -->
+            select
+            <include refid="Base_Column_List" />
+            from lty_virtual_card_account_history
+            where id = #{id,jdbcType=BIGINT}
+        </select>
+        <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+            <!--
+            @mbggenerated
+            -->
+            delete from lty_virtual_card_account_history
+            where id = #{id,jdbcType=BIGINT}
+        </delete>
+        <insert id="insert" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistory">
+            <!--
+            @mbggenerated
+            -->
+            insert into lty_virtual_card_account_history (id, gmt_create, gmt_modified,
+            transaction_id, user_id, user_name,
+            city_code, card_no, amount,
+            balance, opt_type, pay_type,
+            pay_status, pay_time, field1,
+            field2, field3)
+            values (#{id,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP},
+            #{transactionId,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=CHAR},
+            #{cityCode,jdbcType=VARCHAR}, #{cardNo,jdbcType=CHAR}, #{amount,jdbcType=DECIMAL},
+            #{balance,jdbcType=DECIMAL}, #{optType,jdbcType=TINYINT}, #{payType,jdbcType=TINYINT},
+            #{payStatus,jdbcType=BIT}, #{payTime,jdbcType=TIMESTAMP}, #{field1,jdbcType=VARCHAR},
+            #{field2,jdbcType=VARCHAR}, #{field3,jdbcType=VARCHAR})
+        </insert>
+        <insert id="insertSelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistory">
+            <!--
+            @mbggenerated
+            -->
+            insert into lty_virtual_card_account_history
+            <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id != null">
+                    id,
+                </if>
+                <if test="gmtCreate != null">
+                    gmt_create,
+                </if>
+                <if test="gmtModified != null">
+                    gmt_modified,
+                </if>
+                <if test="transactionId != null">
+                    transaction_id,
+                </if>
+                <if test="userId != null">
+                    user_id,
+                </if>
+                <if test="userName != null">
+                    user_name,
+                </if>
+                <if test="cityCode != null">
+                    city_code,
+                </if>
+                <if test="cardNo != null">
+                    card_no,
+                </if>
+                <if test="amount != null">
+                    amount,
+                </if>
+                <if test="balance != null">
+                    balance,
+                </if>
+                <if test="optType != null">
+                    opt_type,
+                </if>
+                <if test="payType != null">
+                    pay_type,
+                </if>
+                <if test="payStatus != null">
+                    pay_status,
+                </if>
+                <if test="payTime != null">
+                    pay_time,
+                </if>
+                <if test="field1 != null">
+                    field1,
+                </if>
+                <if test="field2 != null">
+                    field2,
+                </if>
+                <if test="field3 != null">
+                    field3,
+                </if>
+            </trim>
+            <trim prefix="values (" suffix=")" suffixOverrides=",">
+                <if test="id != null">
+                    #{id,jdbcType=BIGINT},
+                </if>
+                <if test="gmtCreate != null">
+                    #{gmtCreate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="gmtModified != null">
+                    #{gmtModified,jdbcType=TIMESTAMP},
+                </if>
+                <if test="transactionId != null">
+                    #{transactionId,jdbcType=VARCHAR},
+                </if>
+                <if test="userId != null">
+                    #{userId,jdbcType=INTEGER},
+                </if>
+                <if test="userName != null">
+                    #{userName,jdbcType=CHAR},
+                </if>
+                <if test="cityCode != null">
+                    #{cityCode,jdbcType=VARCHAR},
+                </if>
+                <if test="cardNo != null">
+                    #{cardNo,jdbcType=CHAR},
+                </if>
+                <if test="amount != null">
+                    #{amount,jdbcType=DECIMAL},
+                </if>
+                <if test="balance != null">
+                    #{balance,jdbcType=DECIMAL},
+                </if>
+                <if test="optType != null">
+                    #{optType,jdbcType=TINYINT},
+                </if>
+                <if test="payType != null">
+                    #{payType,jdbcType=TINYINT},
+                </if>
+                <if test="payStatus != null">
+                    #{payStatus,jdbcType=BIT},
+                </if>
+                <if test="payTime != null">
+                    #{payTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="field1 != null">
+                    #{field1,jdbcType=VARCHAR},
+                </if>
+                <if test="field2 != null">
+                    #{field2,jdbcType=VARCHAR},
+                </if>
+                <if test="field3 != null">
+                    #{field3,jdbcType=VARCHAR},
+                </if>
+            </trim>
+        </insert>
+        <update id="updateByPrimaryKeySelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistory">
+            <!--
+            @mbggenerated
+            -->
+            update lty_virtual_card_account_history
+            <set>
+                <if test="gmtCreate != null">
+                    gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="gmtModified != null">
+                    gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+                </if>
+                <if test="transactionId != null">
+                    transaction_id = #{transactionId,jdbcType=VARCHAR},
+                </if>
+                <if test="userId != null">
+                    user_id = #{userId,jdbcType=INTEGER},
+                </if>
+                <if test="userName != null">
+                    user_name = #{userName,jdbcType=CHAR},
+                </if>
+                <if test="cityCode != null">
+                    city_code = #{cityCode,jdbcType=VARCHAR},
+                </if>
+                <if test="cardNo != null">
+                    card_no = #{cardNo,jdbcType=CHAR},
+                </if>
+                <if test="amount != null">
+                    amount = #{amount,jdbcType=DECIMAL},
+                </if>
+                <if test="balance != null">
+                    balance = #{balance,jdbcType=DECIMAL},
+                </if>
+                <if test="optType != null">
+                    opt_type = #{optType,jdbcType=TINYINT},
+                </if>
+                <if test="payType != null">
+                    pay_type = #{payType,jdbcType=TINYINT},
+                </if>
+                <if test="payStatus != null">
+                    pay_status = #{payStatus,jdbcType=BIT},
+                </if>
+                <if test="payTime != null">
+                    pay_time = #{payTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="field1 != null">
+                    field1 = #{field1,jdbcType=VARCHAR},
+                </if>
+                <if test="field2 != null">
+                    field2 = #{field2,jdbcType=VARCHAR},
+                </if>
+                <if test="field3 != null">
+                    field3 = #{field3,jdbcType=VARCHAR},
+                </if>
+            </set>
+            where id = #{id,jdbcType=BIGINT}
+        </update>
+        <update id="updateByPrimaryKey" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistory">
+            <!--
+            @mbggenerated
+            -->
+            update lty_virtual_card_account_history
+            set gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+            transaction_id = #{transactionId,jdbcType=VARCHAR},
+            user_id = #{userId,jdbcType=INTEGER},
+            user_name = #{userName,jdbcType=CHAR},
+            city_code = #{cityCode,jdbcType=VARCHAR},
+            card_no = #{cardNo,jdbcType=CHAR},
+            amount = #{amount,jdbcType=DECIMAL},
+            balance = #{balance,jdbcType=DECIMAL},
+            opt_type = #{optType,jdbcType=TINYINT},
+            pay_type = #{payType,jdbcType=TINYINT},
+            pay_status = #{payStatus,jdbcType=BIT},
+            pay_time = #{payTime,jdbcType=TIMESTAMP},
+            field1 = #{field1,jdbcType=VARCHAR},
+            field2 = #{field2,jdbcType=VARCHAR},
+            field3 = #{field3,jdbcType=VARCHAR}
+            where id = #{id,jdbcType=BIGINT}
+        </update>
+
+    <!-- 自定义方法 分页查询-->
+    <!-- 分页查询需要展示的字段 -->
+    <sql id="Page_Base_Column_List">
+        a.id, a.gmt_create, a.gmt_modified, a.transaction_id, a.user_id, c.userName as user_name, a.city_code, a.card_no,
+        a.amount, a.balance, a.opt_type, a.pay_type, a.pay_status, a.pay_time, a.field1, a.field2, b.cityName as field3
+    </sql>
+    <!-- 分页查询sql -->
+    <select id="findStatisticsByPage"
+            resultMap="BaseResultMap"
+            parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistoryQueryModel">
+        select <include refid="Page_Base_Column_List" /> from lty_virtual_card_account_history a
+        left join base_service_ip b on(a.city_code = b.cityCode)
+        left join base_user c on(a.user_id = c.userId)
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+            <if test="startDate != null and startDate != ''">
+                and a.pay_time >= #{startDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="endDate != null and endDate != ''">
+                and a.pay_time &lt;= #{endDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="cityCode != null and cityCode != -1">
+                and a.city_code = #{cityCode,jdbcType=VARCHAR}
+            </if>
+            <if test="payStatus != null">
+                and a.pay_status = #{payStatus,jdbcType=BIT}
+            </if>
+            <if test="payType != null">
+                and a.pay_type = #{payType,jdbcType=TINYINT}
+            </if>
+            and a.opt_type = 1
+        </trim>
+        order by a.pay_time desc
+    </select>
+
+    <!--统计合计金额-->
+    <select id="totalRechargeMoney" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistoryQueryModel"
+            resultType="java.math.BigDecimal">
+        select sum(amount) from lty_virtual_card_account_history
+        <trim prefix="WHERE" prefixOverrides="AND|OR">
+            <if test="startDate != null and startDate != ''">
+                and pay_time >= #{startDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="endDate != null and endDate != ''">
+                and pay_time &lt;= #{endDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="cityCode != null and cityCode != -1">
+                and city_code = #{cityCode,jdbcType=VARCHAR}
+            </if>
+            <if test="payStatus != null">
+                and pay_status = #{payStatus,jdbcType=BIT}
+            </if>
+            <if test="payType != null">
+                and pay_type = #{payType,jdbcType=TINYINT}
+            </if>
+            and opt_type = 1
+        </trim>
+    </select>
+
+	<!--自定义 总流水 queryHistoryByUserAndCity -->
+	<select id="queryHistoryByUserAndCity" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_account_history
+		where user_id = #{userId,jdbcType=INTEGER}
+		and
+		city_code = #{cityCode,jdbcType=VARCHAR}
+		and
+		pay_status = 1 ORDER BY gmt_modified DESC
+	</select>
+	<!--自定义 消费 queryConsumeHistoryByUserAndCity -->
+	<select id="queryConsumeHistoryByUserAndCity" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_account_history
+		where user_id = #{userId,jdbcType=INTEGER}
+		and
+		city_code = #{cityCode,jdbcType=VARCHAR}
+		AND opt_type = 2
+		and
+		pay_status = 1 ORDER BY gmt_modified DESC
+	</select>
+	<!--自定义 充值 queryDepositHistoryByUserAndCity -->
+	<select id="queryDepositHistoryByUserAndCity" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_account_history
+		where user_id = #{userId,jdbcType=INTEGER}
+		and
+		city_code = #{cityCode,jdbcType=VARCHAR}
+		AND opt_type = 1
+		and
+		pay_status = 1 ORDER BY gmt_modified DESC
+	</select>
+	
+	<!--queryByTransId  -->
+	 <select id="queryByTransId" parameterType="java.lang.String" resultMap="BaseResultMap">
+            <!--
+            @mbggenerated
+            -->
+            select
+            <include refid="Base_Column_List" />
+            from lty_virtual_card_account_history
+            where  transaction_id = #{transId,jdbcType=VARCHAR}
+        </select>
+	<!-- updateByTransIdSelective -->
+	<update id="updateByTransIdSelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardAccountHistory">
+            <!--
+            @mbggenerated
+            -->
+            update lty_virtual_card_account_history
+            <set>
+                <if test="gmtCreate != null">
+                    gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+                </if>
+                <if test="gmtModified != null">
+                    gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+                </if>
+                <if test="userId != null">
+                    user_id = #{userId,jdbcType=INTEGER},
+                </if>
+                <if test="userName != null">
+                    user_name = #{userName,jdbcType=CHAR},
+                </if>
+                <if test="cityCode != null">
+                    city_code = #{cityCode,jdbcType=VARCHAR},
+                </if>
+                <if test="cardNo != null">
+                    card_no = #{cardNo,jdbcType=CHAR},
+                </if>
+                <if test="amount != null">
+                    amount = #{amount,jdbcType=DECIMAL},
+                </if>
+                <if test="balance != null">
+                    balance = #{balance,jdbcType=DECIMAL},
+                </if>
+                <if test="optType != null">
+                    opt_type = #{optType,jdbcType=TINYINT},
+                </if>
+                <if test="payType != null">
+                    pay_type = #{payType,jdbcType=TINYINT},
+                </if>
+                <if test="payStatus != null">
+                    pay_status = #{payStatus,jdbcType=BIT},
+                </if>
+                <if test="payTime != null">
+                    pay_time = #{payTime,jdbcType=TIMESTAMP},
+                </if>
+                <if test="field1 != null">
+                    field1 = #{field1,jdbcType=VARCHAR},
+                </if>
+                <if test="field2 != null">
+                    field2 = #{field2,jdbcType=VARCHAR},
+                </if>
+                <if test="field3 != null">
+                    field3 = #{field3,jdbcType=VARCHAR},
+                </if>
+            </set>
+            where   
+                    transaction_id = #{transactionId,jdbcType=VARCHAR}
+             
+        </update>
+	
+	<!--自定义 未支付充值 queryUnPaidHistoryByUserAndCity -->
+	<select id="queryUnPaidHistoryByUserAndCity" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_account_history
+		where user_id = #{userId,jdbcType=INTEGER}
+		and
+		city_code = #{cityCode,jdbcType=VARCHAR}
+		AND opt_type = 1
+		and
+		pay_status = 0 ORDER BY gmt_modified DESC
+	</select>
+	
+</mapper>

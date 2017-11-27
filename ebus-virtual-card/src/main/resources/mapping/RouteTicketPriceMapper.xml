@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lantaiyuan.ebus.virtual.card.dao.RouteTicketPriceMapper">
+	<resultMap id="BaseResultMap"
+		type="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice">
+		<!-- @mbggenerated -->
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="route_id" jdbcType="VARCHAR" property="routeId" />
+		<result column="direction" jdbcType="INTEGER" property="direction" />
+		<result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+		<result column="up_station_id" jdbcType="INTEGER" property="upStationId" />
+		<result column="up_station_no" jdbcType="INTEGER" property="upStationNo" />
+		<result column="down_station_id" jdbcType="INTEGER" property="downStationId" />
+		<result column="down_station_no" jdbcType="INTEGER" property="downStationNo" />
+		<result column="price" jdbcType="DECIMAL" property="price" />
+		<result column="field1" jdbcType="VARCHAR" property="field1" />
+		<result column="field2" jdbcType="VARCHAR" property="field2" />
+		<result column="field3" jdbcType="VARCHAR" property="field3" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		<!-- @mbggenerated -->
+		id, route_id, direction, city_code, up_station_id, up_station_no,
+		down_station_id,
+		down_station_no, price, field1, field2, field3
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from base_route_ticket_price
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		<!-- @mbggenerated -->
+		delete from base_route_ticket_price
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice">
+		<!-- @mbggenerated -->
+		insert into base_route_ticket_price (id, route_id, direction,
+		city_code, up_station_id, up_station_no,
+		down_station_id,
+		down_station_no, price,
+		field1, field2, field3
+		)
+		values
+		(#{id,jdbcType=INTEGER}, #{routeId,jdbcType=VARCHAR},
+		#{direction,jdbcType=INTEGER},
+		#{cityCode,jdbcType=VARCHAR},
+		#{upStationId,jdbcType=INTEGER}, #{upStationNo,jdbcType=INTEGER},
+		#{downStationId,jdbcType=INTEGER}, #{downStationNo,jdbcType=INTEGER},
+		#{price,jdbcType=DECIMAL},
+		#{field1,jdbcType=VARCHAR},
+		#{field2,jdbcType=VARCHAR}, #{field3,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice">
+		<!-- @mbggenerated -->
+		insert into base_route_ticket_price
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="routeId != null">
+				route_id,
+			</if>
+			<if test="direction != null">
+				direction,
+			</if>
+			<if test="cityCode != null">
+				city_code,
+			</if>
+			<if test="upStationId != null">
+				up_station_id,
+			</if>
+			<if test="upStationNo != null">
+				up_station_no,
+			</if>
+			<if test="downStationId != null">
+				down_station_id,
+			</if>
+			<if test="downStationNo != null">
+				down_station_no,
+			</if>
+			<if test="price != null">
+				price,
+			</if>
+			<if test="field1 != null">
+				field1,
+			</if>
+			<if test="field2 != null">
+				field2,
+			</if>
+			<if test="field3 != null">
+				field3,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="routeId != null">
+				#{routeId,jdbcType=VARCHAR},
+			</if>
+			<if test="direction != null">
+				#{direction,jdbcType=INTEGER},
+			</if>
+			<if test="cityCode != null">
+				#{cityCode,jdbcType=VARCHAR},
+			</if>
+			<if test="upStationId != null">
+				#{upStationId,jdbcType=INTEGER},
+			</if>
+			<if test="upStationNo != null">
+				#{upStationNo,jdbcType=INTEGER},
+			</if>
+			<if test="downStationId != null">
+				#{downStationId,jdbcType=INTEGER},
+			</if>
+			<if test="downStationNo != null">
+				#{downStationNo,jdbcType=INTEGER},
+			</if>
+			<if test="price != null">
+				#{price,jdbcType=DECIMAL},
+			</if>
+			<if test="field1 != null">
+				#{field1,jdbcType=VARCHAR},
+			</if>
+			<if test="field2 != null">
+				#{field2,jdbcType=VARCHAR},
+			</if>
+			<if test="field3 != null">
+				#{field3,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice">
+		<!-- @mbggenerated -->
+		update base_route_ticket_price
+		<set>
+			<if test="routeId != null">
+				route_id = #{routeId,jdbcType=VARCHAR},
+			</if>
+			<if test="direction != null">
+				direction = #{direction,jdbcType=INTEGER},
+			</if>
+			<if test="cityCode != null">
+				city_code = #{cityCode,jdbcType=VARCHAR},
+			</if>
+			<if test="upStationId != null">
+				up_station_id = #{upStationId,jdbcType=INTEGER},
+			</if>
+			<if test="upStationNo != null">
+				up_station_no = #{upStationNo,jdbcType=INTEGER},
+			</if>
+			<if test="downStationId != null">
+				down_station_id = #{downStationId,jdbcType=INTEGER},
+			</if>
+			<if test="downStationNo != null">
+				down_station_no = #{downStationNo,jdbcType=INTEGER},
+			</if>
+			<if test="price != null">
+				price = #{price,jdbcType=DECIMAL},
+			</if>
+			<if test="field1 != null">
+				field1 = #{field1,jdbcType=VARCHAR},
+			</if>
+			<if test="field2 != null">
+				field2 = #{field2,jdbcType=VARCHAR},
+			</if>
+			<if test="field3 != null">
+				field3 = #{field3,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice">
+		<!-- @mbggenerated -->
+		update base_route_ticket_price
+		set route_id =
+		#{routeId,jdbcType=VARCHAR},
+		direction = #{direction,jdbcType=INTEGER},
+		city_code = #{cityCode,jdbcType=VARCHAR},
+		up_station_id =
+		#{upStationId,jdbcType=INTEGER},
+		up_station_no =
+		#{upStationNo,jdbcType=INTEGER},
+		down_station_id =
+		#{downStationId,jdbcType=INTEGER},
+		down_station_no =
+		#{downStationNo,jdbcType=INTEGER},
+		price = #{price,jdbcType=DECIMAL},
+		field1 = #{field1,jdbcType=VARCHAR},
+		field2 =
+		#{field2,jdbcType=VARCHAR},
+		field3 = #{field3,jdbcType=VARCHAR}
+		where id
+		= #{id,jdbcType=INTEGER}
+	</update>
+
+	<!-- queryByUpDownStationId -->
+	<select id="queryByUpDownStationId"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from base_route_ticket_price
+		where route_id =
+		#{routeId,jdbcType=VARCHAR}
+		and
+		direction =
+		#{direction,jdbcType=INTEGER}
+		and city_code =
+		#{cityCode,jdbcType=VARCHAR}
+		and up_station_id =
+		#{upStationId,jdbcType=INTEGER}
+		and down_station_id =
+		#{downStationId,jdbcType=INTEGER}
+	</select>
+
+	<!-- queryByUpDownStationNo -->
+	<select id="queryByUpDownStationNo"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from base_route_ticket_price
+		where route_id =
+		#{routeId,jdbcType=VARCHAR}
+		and
+		direction =
+		#{direction,jdbcType=INTEGER}
+		and city_code =
+		#{cityCode,jdbcType=VARCHAR}
+		and up_station_no =
+		#{upStationNo,jdbcType=INTEGER}
+		and down_station_no =
+		#{downStationNo,jdbcType=INTEGER}
+	</select>
+
+	<!-- queryUpDownStationByNo -->
+	<select id="queryUpDownStationByNo"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteTicketPrice"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from base_route_ticket_price
+		where route_id =
+		#{routeId,jdbcType=VARCHAR}
+		and
+		direction =
+		#{direction,jdbcType=INTEGER}
+		and city_code =
+		#{cityCode,jdbcType=VARCHAR}
+		and up_station_no =
+		#{upStationNo,jdbcType=INTEGER}
+		limit 1
+	</select>
+
+	<!-- RelRouteStationResultMap -->
+	<resultMap id="RelRouteStationResultMap" type="com.lantaiyuan.ebus.model.RelRouteStation">
+		<!-- @mbggenerated -->
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="routeId" jdbcType="VARCHAR" property="routeid" />
+		<result column="stationId" jdbcType="VARCHAR" property="stationid" />
+		<result column="previousStationId" jdbcType="INTEGER" property="previousstationid" />
+		<result column="nextStationId" jdbcType="INTEGER" property="nextstationid" />
+		<result column="stationNo" jdbcType="INTEGER" property="stationno" />
+		<result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+		<result column="cityCode" jdbcType="VARCHAR" property="citycode" />
+		<result column="direction" jdbcType="INTEGER" property="direction" />
+	</resultMap>
+
+	<!-- querySingleStationByNo -->
+	<select id="querySingleStationByNo" parameterType="com.lantaiyuan.ebus.model.RelRouteStation"
+		resultMap="RelRouteStationResultMap">
+		<!-- @mbggenerated -->
+		SELECT * from rel_route_station WHERE
+
+		routeId = #{routeid,jdbcType=VARCHAR} and
+
+		stationNo = #{stationno,jdbcType=INTEGER} and
+
+		cityCode = #{citycode,jdbcType=VARCHAR} and
+
+		direction = #{direction,jdbcType=INTEGER}
+		limit 1
+	</select>
+</mapper>

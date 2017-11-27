@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.lanqiao</groupId>
+  <artifactId>ssm-common-web</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170506.032831</timestamp>
+      <buildNumber>30</buildNumber>
+    </snapshot>
+    <lastUpdated>20170506032831</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.0.1-20170506.032831-30</value>
+        <updated>20170506032831</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.1-20170506.032831-30</value>
+        <updated>20170506032831</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>0.0.1-20170506.032831-30</value>
+        <updated>20170506032831</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

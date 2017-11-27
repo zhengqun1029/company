@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lantaiyuan.ebus.virtual.card.dao.RouteChargeStandardMapper">
+    <resultMap id="BaseResultMap" type="com.lantaiyuan.ebus.virtual.card.model.RouteChargeStandard">
+        <!--
+        @mbggenerated
+        -->
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="route_id" jdbcType="VARCHAR" property="routeId" />
+        <result column="route_name" jdbcType="VARCHAR" property="routeName" />
+        <result column="short_name" jdbcType="VARCHAR" property="shortName" />
+        <result column="route_type" jdbcType="INTEGER" property="routeType" />
+        <result column="charge_type" jdbcType="INTEGER" property="chargeType" />
+        <result column="distance" jdbcType="DECIMAL" property="distance" />
+        <result column="direction" jdbcType="INTEGER" property="direction" />
+        <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+        <result column="minutes" jdbcType="INTEGER" property="minutes" />
+        <result column="late_minutes" jdbcType="INTEGER" property="lateMinutes" />
+        <result column="cheapest_price" jdbcType="DECIMAL" property="cheapestPrice" />
+        <result column="highest_price" jdbcType="DECIMAL" property="highestPrice" />
+        <result column="field1" jdbcType="VARCHAR" property="field1" />
+        <result column="field2" jdbcType="VARCHAR" property="field2" />
+        <result column="field3" jdbcType="VARCHAR" property="field3" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        id, route_id, route_name, short_name, route_type, charge_type, distance, direction, 
+        city_code, minutes, late_minutes, cheapest_price, highest_price, field1, field2, 
+        field3
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from base_route_charge_standard
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        <!--
+        @mbggenerated
+        -->
+        delete from base_route_charge_standard
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteChargeStandard">
+        <!--
+        @mbggenerated
+        -->
+        insert into base_route_charge_standard (id, route_id, route_name, 
+            short_name, route_type, charge_type, 
+            distance, direction, city_code, 
+            minutes, late_minutes, cheapest_price, 
+            highest_price, field1, field2, 
+            field3)
+        values (#{id,jdbcType=INTEGER}, #{routeId,jdbcType=VARCHAR}, #{routeName,jdbcType=VARCHAR}, 
+            #{shortName,jdbcType=VARCHAR}, #{routeType,jdbcType=INTEGER}, #{chargeType,jdbcType=INTEGER}, 
+            #{distance,jdbcType=DECIMAL}, #{direction,jdbcType=INTEGER}, #{cityCode,jdbcType=VARCHAR}, 
+            #{minutes,jdbcType=INTEGER}, #{lateMinutes,jdbcType=INTEGER}, #{cheapestPrice,jdbcType=DECIMAL}, 
+            #{highestPrice,jdbcType=DECIMAL}, #{field1,jdbcType=VARCHAR}, #{field2,jdbcType=VARCHAR}, 
+            #{field3,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteChargeStandard">
+        <!--
+        @mbggenerated
+        -->
+        insert into base_route_charge_standard
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="routeId != null">
+                route_id,
+            </if>
+            <if test="routeName != null">
+                route_name,
+            </if>
+            <if test="shortName != null">
+                short_name,
+            </if>
+            <if test="routeType != null">
+                route_type,
+            </if>
+            <if test="chargeType != null">
+                charge_type,
+            </if>
+            <if test="distance != null">
+                distance,
+            </if>
+            <if test="direction != null">
+                direction,
+            </if>
+            <if test="cityCode != null">
+                city_code,
+            </if>
+            <if test="minutes != null">
+                minutes,
+            </if>
+            <if test="lateMinutes != null">
+                late_minutes,
+            </if>
+            <if test="cheapestPrice != null">
+                cheapest_price,
+            </if>
+            <if test="highestPrice != null">
+                highest_price,
+            </if>
+            <if test="field1 != null">
+                field1,
+            </if>
+            <if test="field2 != null">
+                field2,
+            </if>
+            <if test="field3 != null">
+                field3,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="routeId != null">
+                #{routeId,jdbcType=VARCHAR},
+            </if>
+            <if test="routeName != null">
+                #{routeName,jdbcType=VARCHAR},
+            </if>
+            <if test="shortName != null">
+                #{shortName,jdbcType=VARCHAR},
+            </if>
+            <if test="routeType != null">
+                #{routeType,jdbcType=INTEGER},
+            </if>
+            <if test="chargeType != null">
+                #{chargeType,jdbcType=INTEGER},
+            </if>
+            <if test="distance != null">
+                #{distance,jdbcType=DECIMAL},
+            </if>
+            <if test="direction != null">
+                #{direction,jdbcType=INTEGER},
+            </if>
+            <if test="cityCode != null">
+                #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="minutes != null">
+                #{minutes,jdbcType=INTEGER},
+            </if>
+            <if test="lateMinutes != null">
+                #{lateMinutes,jdbcType=INTEGER},
+            </if>
+            <if test="cheapestPrice != null">
+                #{cheapestPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="highestPrice != null">
+                #{highestPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="field1 != null">
+                #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                #{field3,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteChargeStandard">
+        <!--
+        @mbggenerated
+        -->
+        update base_route_charge_standard
+        <set>
+            <if test="routeId != null">
+                route_id = #{routeId,jdbcType=VARCHAR},
+            </if>
+            <if test="routeName != null">
+                route_name = #{routeName,jdbcType=VARCHAR},
+            </if>
+            <if test="shortName != null">
+                short_name = #{shortName,jdbcType=VARCHAR},
+            </if>
+            <if test="routeType != null">
+                route_type = #{routeType,jdbcType=INTEGER},
+            </if>
+            <if test="chargeType != null">
+                charge_type = #{chargeType,jdbcType=INTEGER},
+            </if>
+            <if test="distance != null">
+                distance = #{distance,jdbcType=DECIMAL},
+            </if>
+            <if test="direction != null">
+                direction = #{direction,jdbcType=INTEGER},
+            </if>
+            <if test="cityCode != null">
+                city_code = #{cityCode,jdbcType=VARCHAR},
+            </if>
+            <if test="minutes != null">
+                minutes = #{minutes,jdbcType=INTEGER},
+            </if>
+            <if test="lateMinutes != null">
+                late_minutes = #{lateMinutes,jdbcType=INTEGER},
+            </if>
+            <if test="cheapestPrice != null">
+                cheapest_price = #{cheapestPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="highestPrice != null">
+                highest_price = #{highestPrice,jdbcType=DECIMAL},
+            </if>
+            <if test="field1 != null">
+                field1 = #{field1,jdbcType=VARCHAR},
+            </if>
+            <if test="field2 != null">
+                field2 = #{field2,jdbcType=VARCHAR},
+            </if>
+            <if test="field3 != null">
+                field3 = #{field3,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.lantaiyuan.ebus.virtual.card.model.RouteChargeStandard">
+        <!--
+        @mbggenerated
+        -->
+        update base_route_charge_standard
+        set route_id = #{routeId,jdbcType=VARCHAR},
+            route_name = #{routeName,jdbcType=VARCHAR},
+            short_name = #{shortName,jdbcType=VARCHAR},
+            route_type = #{routeType,jdbcType=INTEGER},
+            charge_type = #{chargeType,jdbcType=INTEGER},
+            distance = #{distance,jdbcType=DECIMAL},
+            direction = #{direction,jdbcType=INTEGER},
+            city_code = #{cityCode,jdbcType=VARCHAR},
+            minutes = #{minutes,jdbcType=INTEGER},
+            late_minutes = #{lateMinutes,jdbcType=INTEGER},
+            cheapest_price = #{cheapestPrice,jdbcType=DECIMAL},
+            highest_price = #{highestPrice,jdbcType=DECIMAL},
+            field1 = #{field1,jdbcType=VARCHAR},
+            field2 = #{field2,jdbcType=VARCHAR},
+            field3 = #{field3,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    
+    <!--  queryByCityRouteDirction-->
+     <select id="queryByCityRouteDirction" parameterType="java.lang.String" 
+     resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from base_route_charge_standard
+        where 
+        route_id = #{routeId,jdbcType=VARCHAR}
+        and    
+        direction = #{direction,jdbcType=VARCHAR}
+        and
+        city_code = #{cityCode,jdbcType=VARCHAR}
+    </select>
+</mapper>

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.lantaiyuan.ebus.virtual.card.dao.VirtualCardSwipeHistoryMapper">
+	<resultMap id="BaseResultMap"
+		type="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSwipeHistory">
+		<!-- @mbggenerated -->
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+		<result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+		<result column="swipe_id" jdbcType="VARCHAR" property="swipeId" />
+		<result column="card_no" jdbcType="CHAR" property="cardNo" />
+		<result column="longitude" jdbcType="DECIMAL" property="longitude" />
+		<result column="latitude" jdbcType="DECIMAL" property="latitude" />
+		<result column="swipe_time" jdbcType="TIMESTAMP" property="swipeTime" />
+		<result column="swipe_utc_time" jdbcType="INTEGER" property="swipeUtcTime" />
+		<result column="station_id" jdbcType="INTEGER" property="stationId" />
+		<result column="station_no" jdbcType="INTEGER" property="stationNo" />
+		<result column="route_id" jdbcType="VARCHAR" property="routeId" />
+		<result column="route_direction" jdbcType="BIT" property="routeDirection" />
+		<result column="on_bus_flag" jdbcType="BIT" property="onBusFlag" />
+		<result column="diver_id" jdbcType="INTEGER" property="diverId" />
+		<result column="vehicle_id" jdbcType="VARCHAR" property="vehicleId" />
+		<result column="bus_seq" jdbcType="VARCHAR" property="busSeq" />
+		<result column="verify_code" jdbcType="VARCHAR" property="verifyCode" />
+		<result column="code_status" jdbcType="BIT" property="codeStatus" />
+		<result column="deal_status" jdbcType="BIT" property="dealStatus" />
+		<result column="field1" jdbcType="VARCHAR" property="field1" />
+		<result column="field2" jdbcType="VARCHAR" property="field2" />
+		<result column="field3" jdbcType="VARCHAR" property="field3" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		<!-- @mbggenerated -->
+		id, gmt_create, gmt_modified, swipe_id, card_no, longitude, latitude,
+		swipe_time,
+		swipe_utc_time, station_id, station_no, route_id, route_direction, on_bus_flag,
+		diver_id,
+		vehicle_id, bus_seq, verify_code, code_status, deal_status, field1, field2,
+		field3
+	</sql>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long"
+		resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_swipe_history
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		<!-- @mbggenerated -->
+		delete from lty_virtual_card_swipe_history
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSwipeHistory">
+		<!-- @mbggenerated -->
+		insert into lty_virtual_card_swipe_history (id, gmt_create,
+		gmt_modified,
+		swipe_id, card_no, longitude,
+		latitude, swipe_time, swipe_utc_time,
+		station_id, station_no, route_id,
+		route_direction, on_bus_flag, diver_id,
+		vehicle_id, bus_seq, verify_code,
+		code_status, deal_status, field1,
+		field2, field3)
+		values (#{id,jdbcType=BIGINT}, #{gmtCreate,jdbcType=TIMESTAMP},
+		#{gmtModified,jdbcType=TIMESTAMP},
+		#{swipeId,jdbcType=VARCHAR}, #{cardNo,jdbcType=CHAR}, #{longitude,jdbcType=DECIMAL},
+		#{latitude,jdbcType=DECIMAL}, #{swipeTime,jdbcType=TIMESTAMP},
+		#{swipeUtcTime,jdbcType=INTEGER},
+		#{stationId,jdbcType=INTEGER}, #{stationNo,jdbcType=INTEGER}, #{routeId,jdbcType=VARCHAR},
+		#{routeDirection,jdbcType=BIT}, #{onBusFlag,jdbcType=BIT},
+		#{diverId,jdbcType=INTEGER},
+		#{vehicleId,jdbcType=VARCHAR}, #{busSeq,jdbcType=VARCHAR}, #{verifyCode,jdbcType=VARCHAR},
+		#{codeStatus,jdbcType=BIT}, #{dealStatus,jdbcType=BIT},
+		#{field1,jdbcType=VARCHAR},
+		#{field2,jdbcType=VARCHAR}, #{field3,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSwipeHistory">
+		<!-- @mbggenerated -->
+		insert into lty_virtual_card_swipe_history
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="gmtCreate != null">
+				gmt_create,
+			</if>
+			<if test="gmtModified != null">
+				gmt_modified,
+			</if>
+			<if test="swipeId != null">
+				swipe_id,
+			</if>
+			<if test="cardNo != null">
+				card_no,
+			</if>
+			<if test="longitude != null">
+				longitude,
+			</if>
+			<if test="latitude != null">
+				latitude,
+			</if>
+			<if test="swipeTime != null">
+				swipe_time,
+			</if>
+			<if test="swipeUtcTime != null">
+				swipe_utc_time,
+			</if>
+			<if test="stationId != null">
+				station_id,
+			</if>
+			<if test="stationNo != null">
+				station_no,
+			</if>
+			<if test="routeId != null">
+				route_id,
+			</if>
+			<if test="routeDirection != null">
+				route_direction,
+			</if>
+			<if test="onBusFlag != null">
+				on_bus_flag,
+			</if>
+			<if test="diverId != null">
+				diver_id,
+			</if>
+			<if test="vehicleId != null">
+				vehicle_id,
+			</if>
+			<if test="busSeq != null">
+				bus_seq,
+			</if>
+			<if test="verifyCode != null">
+				verify_code,
+			</if>
+			<if test="codeStatus != null">
+				code_status,
+			</if>
+			<if test="dealStatus != null">
+				deal_status,
+			</if>
+			<if test="field1 != null">
+				field1,
+			</if>
+			<if test="field2 != null">
+				field2,
+			</if>
+			<if test="field3 != null">
+				field3,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="gmtCreate != null">
+				#{gmtCreate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="gmtModified != null">
+				#{gmtModified,jdbcType=TIMESTAMP},
+			</if>
+			<if test="swipeId != null">
+				#{swipeId,jdbcType=VARCHAR},
+			</if>
+			<if test="cardNo != null">
+				#{cardNo,jdbcType=CHAR},
+			</if>
+			<if test="longitude != null">
+				#{longitude,jdbcType=DECIMAL},
+			</if>
+			<if test="latitude != null">
+				#{latitude,jdbcType=DECIMAL},
+			</if>
+			<if test="swipeTime != null">
+				#{swipeTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="swipeUtcTime != null">
+				#{swipeUtcTime,jdbcType=INTEGER},
+			</if>
+			<if test="stationId != null">
+				#{stationId,jdbcType=INTEGER},
+			</if>
+			<if test="stationNo != null">
+				#{stationNo,jdbcType=INTEGER},
+			</if>
+			<if test="routeId != null">
+				#{routeId,jdbcType=VARCHAR},
+			</if>
+			<if test="routeDirection != null">
+				#{routeDirection,jdbcType=BIT},
+			</if>
+			<if test="onBusFlag != null">
+				#{onBusFlag,jdbcType=BIT},
+			</if>
+			<if test="diverId != null">
+				#{diverId,jdbcType=INTEGER},
+			</if>
+			<if test="vehicleId != null">
+				#{vehicleId,jdbcType=VARCHAR},
+			</if>
+			<if test="busSeq != null">
+				#{busSeq,jdbcType=VARCHAR},
+			</if>
+			<if test="verifyCode != null">
+				#{verifyCode,jdbcType=VARCHAR},
+			</if>
+			<if test="codeStatus != null">
+				#{codeStatus,jdbcType=BIT},
+			</if>
+			<if test="dealStatus != null">
+				#{dealStatus,jdbcType=BIT},
+			</if>
+			<if test="field1 != null">
+				#{field1,jdbcType=VARCHAR},
+			</if>
+			<if test="field2 != null">
+				#{field2,jdbcType=VARCHAR},
+			</if>
+			<if test="field3 != null">
+				#{field3,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSwipeHistory">
+		<!-- @mbggenerated -->
+		update lty_virtual_card_swipe_history
+		<set>
+			<if test="gmtCreate != null">
+				gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="gmtModified != null">
+				gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+			</if>
+			<if test="swipeId != null">
+				swipe_id = #{swipeId,jdbcType=VARCHAR},
+			</if>
+			<if test="cardNo != null">
+				card_no = #{cardNo,jdbcType=CHAR},
+			</if>
+			<if test="longitude != null">
+				longitude = #{longitude,jdbcType=DECIMAL},
+			</if>
+			<if test="latitude != null">
+				latitude = #{latitude,jdbcType=DECIMAL},
+			</if>
+			<if test="swipeTime != null">
+				swipe_time = #{swipeTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="swipeUtcTime != null">
+				swipe_utc_time = #{swipeUtcTime,jdbcType=INTEGER},
+			</if>
+			<if test="stationId != null">
+				station_id = #{stationId,jdbcType=INTEGER},
+			</if>
+			<if test="stationNo != null">
+				station_no = #{stationNo,jdbcType=INTEGER},
+			</if>
+			<if test="routeId != null">
+				route_id = #{routeId,jdbcType=VARCHAR},
+			</if>
+			<if test="routeDirection != null">
+				route_direction = #{routeDirection,jdbcType=BIT},
+			</if>
+			<if test="onBusFlag != null">
+				on_bus_flag = #{onBusFlag,jdbcType=BIT},
+			</if>
+			<if test="diverId != null">
+				diver_id = #{diverId,jdbcType=INTEGER},
+			</if>
+			<if test="vehicleId != null">
+				vehicle_id = #{vehicleId,jdbcType=VARCHAR},
+			</if>
+			<if test="busSeq != null">
+				bus_seq = #{busSeq,jdbcType=VARCHAR},
+			</if>
+			<if test="verifyCode != null">
+				verify_code = #{verifyCode,jdbcType=VARCHAR},
+			</if>
+			<if test="codeStatus != null">
+				code_status = #{codeStatus,jdbcType=BIT},
+			</if>
+			<if test="dealStatus != null">
+				deal_status = #{dealStatus,jdbcType=BIT},
+			</if>
+			<if test="field1 != null">
+				field1 = #{field1,jdbcType=VARCHAR},
+			</if>
+			<if test="field2 != null">
+				field2 = #{field2,jdbcType=VARCHAR},
+			</if>
+			<if test="field3 != null">
+				field3 = #{field3,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.lantaiyuan.ebus.virtual.card.model.VirtualCardSwipeHistory">
+		<!-- @mbggenerated -->
+		update lty_virtual_card_swipe_history
+		set gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+		gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+		swipe_id = #{swipeId,jdbcType=VARCHAR},
+		card_no = #{cardNo,jdbcType=CHAR},
+		longitude = #{longitude,jdbcType=DECIMAL},
+		latitude = #{latitude,jdbcType=DECIMAL},
+		swipe_time = #{swipeTime,jdbcType=TIMESTAMP},
+		swipe_utc_time = #{swipeUtcTime,jdbcType=INTEGER},
+		station_id = #{stationId,jdbcType=INTEGER},
+		station_no = #{stationNo,jdbcType=INTEGER},
+		route_id = #{routeId,jdbcType=VARCHAR},
+		route_direction = #{routeDirection,jdbcType=BIT},
+		on_bus_flag = #{onBusFlag,jdbcType=BIT},
+		diver_id = #{diverId,jdbcType=INTEGER},
+		vehicle_id = #{vehicleId,jdbcType=VARCHAR},
+		bus_seq = #{busSeq,jdbcType=VARCHAR},
+		verify_code = #{verifyCode,jdbcType=VARCHAR},
+		code_status = #{codeStatus,jdbcType=BIT},
+		deal_status = #{dealStatus,jdbcType=BIT},
+		field1 = #{field1,jdbcType=VARCHAR},
+		field2 = #{field2,jdbcType=VARCHAR},
+		field3 = #{field3,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+
+	<select id="queryUnCheckRecord" resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_swipe_history
+		WHERE code_status = 0
+		AND deal_status = 0
+		<if test="id != null">
+			AND id > #{id}
+		</if>
+		ORDER BY id
+		LIMIT 0, #{length}
+	</select>
+
+
+	<select id="queryExistRecord" resultMap="BaseResultMap">
+		<!-- @mbggenerated -->
+		select
+		<include refid="Base_Column_List" />
+		from lty_virtual_card_swipe_history
+		where
+		card_no = #{cardNo,jdbcType=CHAR}
+		and
+		swipe_utc_time = #{swipeUtcTime,jdbcType=INTEGER}
+		and
+		route_id = #{routeId,jdbcType=VARCHAR}
+		and
+		vehicle_id = #{vehicleId,jdbcType=VARCHAR}
+	</select>
+</mapper>
